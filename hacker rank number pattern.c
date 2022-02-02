@@ -1,27 +1,29 @@
-#include <stdio.h>
-#include <string.h>
-#include <math.h>
-#include <stdlib.h>
-
-int main() 
-{
-
-    int n;
-    scanf("%d", &n);
-    int k = n*2-1;  
-    int m = n;
-    
-  	// Complete the code to print the pattern.
-      for(int i = 1; i<=k; i++){
-          for(int j = 0; j<=k; j++){
-              if(i==1||j==1||i==k||j==k){
-                  printf("%d", m);
-              }
-        //   for(int p = 1; p<=k; p++ ){
-        //       if()
-        //   }
-          }
-          printf("\n");
-      }
-    return 0;
-}
+#include<stdio.h>
+int main(){
+	int n;
+	scanf("%d", &n);
+	int k = 2*n-1;
+	int start = 0;
+	int end = k-1;
+	int a[k][k];
+	while(n!=0){
+		for(int i = start; i<=end; i++){
+			for(int j = start; j<=end; j++){
+				if(i==start||i == end|| j ==start||j == end){
+					a[i][j] = n;							
+				}
+			}
+		
+		}
+		++start;
+		--end;
+		--n;
+	}
+	for(int i = 0 ;i<k; i++){
+			for(int j = 0; j< k; j++){
+				printf("%d ", a[i][j]);
+			}
+				printf("\n");
+		}
+		return 0;
+	}
